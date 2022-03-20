@@ -1,4 +1,4 @@
-import { SECRET, EXPIRES_IN } from 'presentation/utils/environment';
+import { SECRET, EXPIRES_IN } from '@presentation/utils/environment';
 
 interface IAuthConfig {
   secret: string;

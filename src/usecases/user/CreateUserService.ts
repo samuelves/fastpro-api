@@ -15,7 +15,6 @@ interface IRequest {
   bio: string;
 }
 
-// permite que as dependencias dessa classe seja injetada em tempo de execução.
 @injectable()
 class CreateUserService {
   private usersRepository: IUserRepository;

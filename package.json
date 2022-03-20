@@ -13,6 +13,7 @@
     "@types/jest": "~27.4",
     "@types/jsonwebtoken": "^8.5.8",
     "@types/node": "~16.11",
+    "@types/node-fetch": "^2.6.1",
     "@types/redis": "^4.0.11",
     "@typescript-eslint/eslint-plugin": "~5.14",
     "@typescript-eslint/parser": "~5.14",
@@ -27,7 +28,7 @@
     "typescript": "~4.6"
   },
   "scripts": {
-    "dev": "tsnd -r tsconfig-paths/register --transpile-only --ignore-watch node_modules ./src/shared/infrastructure/http/server.ts",
+    "dev": "tsnd -r tsconfig-paths/register --transpile-only --ignore-watch node_modules ./src/presentation/infrastructure/http/server.ts",
     "clean": "rimraf coverage build tmp",
     "prebuild": "npm run lint",
     "build": "tsc -p tsconfig.json",
@@ -52,6 +53,7 @@
     "express-async-errors": "^3.1.1",
     "ioredis": "^4.19.2",
     "jsonwebtoken": "^8.5.1",
+    "node-fetch": "^2.6.7",
     "ora": "^5.1.0",
     "pg": "^8.4.2",
     "rate-limiter-flexible": "^2.1.13",

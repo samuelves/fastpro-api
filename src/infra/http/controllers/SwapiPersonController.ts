@@ -2,13 +2,15 @@ import { Request, Response } from 'express';
 import { container } from 'tsyringe';
 import { classToClass } from 'class-transformer';
 
-import CreateUserService from '@usecases/user/CreateUserService';
+import SwapiPersonService from '@usecases/swapiPerson/SwapiPersonService';
 
 class UsersController {
-  public async create(request: Request, response: Response): Promise<Response> {
-    const { name, email, password, bio } = request.body;
-    const createUser = container.resolve(CreateUserService);
-    const user = await createUser.execute({ name, email, password, bio });
+  public async create(
+    _request: Request,
+    response: Response
+  ): Promise<Response> {
+    const createUser = container.resolve(SwapiPersonService);
+    const user = await createUser.execute();
     return response.status(200).json(classToClass(user));
   }
 
