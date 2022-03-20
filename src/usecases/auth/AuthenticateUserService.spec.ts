@@ -1,6 +1,5 @@
 import FakeUsersRepository from '@usecases/user/repository/mocks/FakeUsersRepository';
 import FakeHashProvider from '@modules/users/providers/HashProvider/fakes/FakeHashProvider';
-import FakeCacheProvider from '@shared/container/providers/CacheProvider/fakes/FakeRedisCacheProvider';
 
 import AuthenticateUserService from '@usecases/auth/AuthenticateUserService';
 import CreateUserService from '@usecases/user/CreateUserService';
@@ -12,19 +11,13 @@ let createUserService: CreateUserService;
 
 let usersRepository: FakeUsersRepository;
 let hashProvider: FakeHashProvider;
-let cacheProvider: FakeCacheProvider;
 
 describe('Authenticate User', () => {
   beforeEach(() => {
     usersRepository = new FakeUsersRepository();
     hashProvider = new FakeHashProvider();
-    cacheProvider = new FakeCacheProvider();
 
-    createUserService = new CreateUserService(
-      usersRepository,
-      hashProvider,
-      cacheProvider
-    );
+    createUserService = new CreateUserService(usersRepository, hashProvider);
 
     authenticateUserService = new AuthenticateUserService(
       usersRepository,

@@ -4,9 +4,7 @@ import { injectable, inject } from 'tsyringe';
 import IUserRepository from '@usecases/user/repository/ICreateUsersRepository';
 import IHashProvider from '@modules/users/providers/HashProvider/models/IHashProvider';
 
-import ICacheProvider from '@shared/container/providers/CacheProvider/models/ICacheProvider';
-
-import User from '@modules/users/infrastructure/typeorm/entities/User';
+import User from '@infra/typeorm/entities/User';
 
 import AppError from '@shared/errors/AppError';
 
@@ -22,27 +20,15 @@ interface IRequest {
 class CreateUserService {
   private usersRepository: IUserRepository;
   private hashProvider: IHashProvider;
-  private cacheProvider: ICacheProvider;
 
   constructor(
     @inject('UsersRepository')
     usersRepository: IUserRepository,
-
     @inject('HashProvider')
-    hashProvider: IHashProvider,
-
-    @inject('CacheProvider')
-    cacheProvider: ICacheProvider
-
-    // injetando a dependecia em tempo de execução pelo constructor.
+    hashProvider: IHashProvider
   ) {
     this.usersRepository = usersRepository;
     this.hashProvider = hashProvider;
-    this.cacheProvider = cacheProvider;
-    /**
-     * Aqui estou armazenando a identificação de uma dependecia e a logica por de trás
-     * da sua instanciação.
-     */
   }
 
   public async execute({
@@ -63,8 +49,6 @@ class CreateUserService {
       encrypted_password: hash_password,
       bio,
     });
-
-    await this.cacheProvider.invalidate('users-list');
 
     return user;
   }
