@@ -1,6 +1,6 @@
 import CreateUserService from '@usecases/user/CreateUserService';
 
-import FakeUsersRepository from '@modules/users/repositories/fakes/FakeUsersRepository';
+import FakeUsersRepository from '@usecases/user/repository/mocks/FakeUsersRepository';
 import FakeHashProvider from '@modules/users/providers/HashProvider/fakes/FakeHashProvider';
 import FakeCacheProvider from '@shared/container/providers/CacheProvider/fakes/FakeRedisCacheProvider';
 

@@ -20,6 +20,9 @@
       ],
       "@usecases/*": [
         "usecases/*"
+      ],
+      "@infra/*": [
+        "infra/*"
       ]
     },
     "esModuleInterop": true,
