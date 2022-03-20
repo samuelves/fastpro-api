@@ -1,20 +1,22 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 import 'reflect-metadata';
 import 'express-async-errors';
-
+import cors from 'cors';
 import express, { Request, Response, NextFunction } from 'express';
 import { isCelebrateError } from 'celebrate';
 
-import '@shared/infrastructure/typeorm';
-import '@shared/container';
-import routes from '@shared/infrastructure/http/routes';
-import AppError from '@shared/errors/AppError';
+import '@presentation/infrastructure/typeorm';
+import '@presentation/container';
+import routes from '@presentation/infrastructure/http/routes';
+import AppError from '@presentation/errors/AppError';
 
 interface ValidationError {
   [key: string]: string;
 }
 
 export const app = express();
+
+app.use(cors());
 
 app.use(express.json());
 

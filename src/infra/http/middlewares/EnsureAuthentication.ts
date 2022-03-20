@@ -4,7 +4,7 @@ import { verify } from 'jsonwebtoken';
 
 import authConfig from '@config/auth';
 
-import AppError from '@shared/errors/AppError';
+import AppError from '@presentation/errors/AppError';
 
 interface ITokenPayload {
   iat: number;

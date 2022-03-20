@@ -6,7 +6,7 @@ import IHashProvider from '@modules/users/providers/HashProvider/models/IHashPro
 
 import User from '@infra/typeorm/entities/User';
 
-import AppError from '@shared/errors/AppError';
+import AppError from '@presentation/errors/AppError';
 
 interface IRequest {
   name: string;

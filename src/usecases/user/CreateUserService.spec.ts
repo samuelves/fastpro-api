@@ -3,7 +3,7 @@ import CreateUserService from '@usecases/user/CreateUserService';
 import FakeUsersRepository from '@usecases/user/repository/mocks/FakeUsersRepository';
 import FakeHashProvider from '@modules/users/providers/HashProvider/fakes/FakeHashProvider';
 
-import AppError from '@shared/errors/AppError';
+import AppError from '@presentation/errors/AppError';
 
 let createUserService: CreateUserService;
 

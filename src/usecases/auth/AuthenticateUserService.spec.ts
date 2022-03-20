@@ -4,7 +4,7 @@ import FakeHashProvider from '@modules/users/providers/HashProvider/fakes/FakeHa
 import AuthenticateUserService from '@usecases/auth/AuthenticateUserService';
 import CreateUserService from '@usecases/user/CreateUserService';
 
-import AppError from '@shared/errors/AppError';
+import AppError from '@presentation/errors/AppError';
 
 let authenticateUserService: AuthenticateUserService;
 let createUserService: CreateUserService;
