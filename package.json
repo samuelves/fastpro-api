@@ -36,16 +36,16 @@
     "test": "jest",
     "test:coverage": "jest --coverage",
     "test:watch": "jest --watch",
-    "typeorm": "ts-node ./node_modules/.bin/typeorm -f ./src/repositories/typeorm/ormconfig.ts",
-    "migration:generate": "yarn run typeorm migration:generate -n",
-    "migration:blank": "yarn run typeorm migration:create -n"
+    "typeorm": "node --require ts-node/register ./node_modules/typeorm/cli.js",
+    "typeorm:migration:generate": "npm run typeorm -- migration:generate -n",
+    "typeorm:migration:run": "npm run typeorm -- migration:run"
   },
   "author": "Ives Samuel <ivessamuel64@gmail.com>",
   "dependencies": {
     "bcryptjs": "^2.4.3",
     "celebrate": "^13.0.4",
     "class-transformer": "^0.3.1",
-    "dotenv": "^8.2.0",
+    "dotenv": "^8.6.0",
     "express": "^4.17.1",
     "express-async-errors": "^3.1.1",
     "ioredis": "^4.19.2",

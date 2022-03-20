@@ -17,6 +17,3 @@ export const {
   TYPEORM_PASSWORD,
   TYPEORM_DATABASE,
 } = process.env;
-
-// Redis Connection Environment;
-export const { REDIS_HOST, REDIS_PORT, REDIS_PASSWORD } = process.env;

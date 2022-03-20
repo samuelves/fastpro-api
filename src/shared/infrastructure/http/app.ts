@@ -7,7 +7,6 @@ import { isCelebrateError } from 'celebrate';
 
 import '@shared/infrastructure/typeorm';
 import '@shared/container';
-
 import routes from '@shared/infrastructure/http/routes';
 import AppError from '@shared/errors/AppError';
 
