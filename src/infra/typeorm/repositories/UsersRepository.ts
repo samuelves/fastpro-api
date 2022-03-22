@@ -41,7 +41,7 @@ class UsersRepository implements ICreateUsersRepository {
 
   public async findAll(): Promise<User[] | undefined> {
     const users = await this.ormRepository.find({
-      select: ['id', 'name', 'bio'],
+      select: ['id', 'name', 'phone'],
     });
 
     return users;

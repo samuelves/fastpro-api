@@ -26,7 +26,7 @@ describe('CreateUser', () => {
       name: 'Maria',
       email: 'maria@example.com',
       password: 'password',
-      bio: 'bio example',
+      phone: '119829038829',
     });
 
     expect(user).toHaveProperty('id');
@@ -37,7 +37,7 @@ describe('CreateUser', () => {
       name: 'joao',
       email: 'joao@example.com',
       password: 'password',
-      bio: 'bio example',
+      phone: '119829038829',
     });
 
     await expect(
@@ -45,7 +45,7 @@ describe('CreateUser', () => {
         name: 'joao',
         email: 'joao@example.com',
         password: 'password',
-        bio: 'bio example',
+        phone: '119829038829',
       })
     ).rejects.toBeInstanceOf(AppError);
     // Usamos o "rejects" quando o teste for cair em um Error.

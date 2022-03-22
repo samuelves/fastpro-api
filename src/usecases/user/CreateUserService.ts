@@ -12,7 +12,7 @@ interface IRequest {
   name: string;
   email: string;
   password: string;
-  bio: string;
+  phone: string;
 }
 
 @injectable()
@@ -34,7 +34,7 @@ class CreateUserService {
     name,
     email,
     password,
-    bio,
+    phone,
   }: IRequest): Promise<User> {
     if (await this.usersRepository.findByEmail(email)) {
       throw new AppError('Email address already used.', 401);
@@ -46,7 +46,7 @@ class CreateUserService {
       name,
       email,
       encrypted_password: hash_password,
-      bio,
+      phone,
     });
 
     return user;

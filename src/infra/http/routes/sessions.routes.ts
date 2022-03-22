@@ -6,7 +6,7 @@ import UserController from '@infra/http/controllers/SessionController';
 const usersRouter = Router();
 
 usersRouter.post(
-  '/session',
+  '/login',
   celebrate(
     {
       [Segments.BODY]: {

@@ -8,14 +8,14 @@ import ensureAuthentication from '@infra/http/middlewares/EnsureAuthentication';
 const usersRouter = Router();
 
 usersRouter.post(
-  '/users',
+  '/register',
   celebrate(
     {
       [Segments.BODY]: {
         name: Joi.string().required(),
         email: Joi.string().email().required(),
         password: Joi.string().required(),
-        bio: Joi.string().required(),
+        phone: Joi.string().required(),
       },
     },
     { abortEarly: false }
@@ -23,6 +23,6 @@ usersRouter.post(
   UserController.create
 );
 
-usersRouter.get('/users', ensureAuthentication, UserController.index);
+usersRouter.get('/register', ensureAuthentication, UserController.index);
 
 export default usersRouter;

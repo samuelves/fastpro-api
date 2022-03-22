@@ -3,8 +3,7 @@ import { Exclude } from 'class-transformer';
 
 @Entity('users')
 class User {
-
-  @PrimaryGeneratedColumn("uuid")
+  @PrimaryGeneratedColumn('uuid')
   id: string;
 
   @Column('varchar')
@@ -18,8 +17,7 @@ class User {
   encrypted_password: string;
 
   @Column('varchar')
-  bio: string;
-
+  phone: string;
 }
 
 export default User;

@@ -9,9 +9,9 @@ module.exports = {
   password: process.env.TYPEORM_PASSWORD,
   database: process.env.TYPEORM_DATABASE,
   logging: true,
-  migrations: ['./src/shared/infrastructure/typeorm/migrations/*.ts'],
+  migrations: ['./src/presentation/infrastructure/typeorm/migrations/*.ts'],
   entities: ['./src/infra/typeorm/entities/*.ts'],
   cli: {
-    migrationsDir: './src/shared/infrastructure/typeorm/migrations',
+    migrationsDir: './src/presentation/infrastructure/typeorm/migrations',
   },
 };

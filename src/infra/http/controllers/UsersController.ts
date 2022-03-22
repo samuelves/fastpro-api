@@ -6,9 +6,9 @@ import CreateUserService from '@usecases/user/CreateUserService';
 
 class UsersController {
   public async create(request: Request, response: Response): Promise<Response> {
-    const { name, email, password, bio } = request.body;
+    const { name, email, password, phone } = request.body;
     const createUser = container.resolve(CreateUserService);
-    const user = await createUser.execute({ name, email, password, bio });
+    const user = await createUser.execute({ name, email, password, phone });
     return response.status(200).json(classToClass(user));
   }
 

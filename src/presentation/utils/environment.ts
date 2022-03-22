@@ -17,3 +17,6 @@ export const {
   TYPEORM_PASSWORD,
   TYPEORM_DATABASE,
 } = process.env;
+
+// url app
+export const { APP_URL } = process.env;
