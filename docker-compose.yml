@@ -1,0 +1,31 @@
+version: '3.8'
+
+services:
+  app:
+    build:
+    container_name: "api-server"
+    command: sh -c "npm run typeorm -- migration:run && npm start"
+    ports:
+      - "3000:3000"
+    volumes:
+      -.:/usr/src
+    links:
+      - db
+    depends_on:
+      - db
+    environment:
+      - DB_HOST: ${TYPEORM_HOST}
+      - DB_USER: ${TYPEORM_USERNAME}
+      - DB_PASS: ${TYPEORM_PASSWORD}
+      - DB_NAME: ${TYPEORM_DATABASE}
+  db:
+    image: postgres:alpine
+    container_name: "db"
+    ports:
+      - "5432:5432"
+    environment:
+      - POSTGRES_USER: ${TYPEORM_USERNAME}
+      - POSTGRES_PASSWORD: ${TYPEORM_PASSWORD}
+      - POSTGRES_NAME: ${TYPEORM_DATABASE}
+networks:
+  overlay:
