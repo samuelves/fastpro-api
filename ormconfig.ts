@@ -9,6 +9,7 @@ module.exports = {
   password: process.env.TYPEORM_PASSWORD,
   database: process.env.TYPEORM_DATABASE,
   logging: true,
+  ssl: { rejectUnauthorized: false },
   migrations: ['./src/presentation/infrastructure/typeorm/migrations/*.ts'],
   entities: ['./src/infra/typeorm/entities/*.ts'],
   cli: {
